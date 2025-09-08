@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Deliciously Yours | Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400|Roboto:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Contact</h1>
+    <p>Get in touch with Deliciously Yours</p>
+  </header>
+  <nav id="navbar">
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="recipes.html">Recipes</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <section>
+      <h2>Contact Form</h2>
+      <form class="contact-form">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea><br>
+        <button type="submit">Send</button>
+      </form>
+      <div id="form-success" style="display:none;color:var(--primary);margin-top:1em;">Thank you! Your message has been sent.</div>
+    </section>
+  </div>
+  <footer>
+    &copy; 2025 Deliciously Yours | Crafted with love by Adnan
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

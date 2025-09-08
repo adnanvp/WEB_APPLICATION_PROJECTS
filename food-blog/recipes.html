@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Deliciously Yours | Recipes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400|Roboto:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Recipes</h1>
+    <p>Discover flavors from around the world</p>
+  </header>
+  <nav id="navbar">
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="recipes.html">Recipes</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <div class="post" id="post-spicy-thai-noodles">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=700&q=80" alt="Spicy Thai Noodles">
+      <div class="post-details">
+        <h2 class="post-title">Spicy Thai Noodles</h2>
+        <div class="post-meta">Posted on September 8, 2025 by Adnan</div>
+        <div class="post-content" id="post-content-1">
+          These spicy Thai noodles are bursting with flavor and take only 20 minutes to prepare! A perfect dish for busy nights.<br>
+          <strong>Ingredients:</strong>
+          <ul>
+            <li>200g rice noodles</li>
+            <li>2 tbsp soy sauce</li>
+            <li>1 tbsp sesame oil</li>
+            <li>1 tsp chili flakes</li>
+            <li>Vegetables of choice</li>
+            <li>Fresh cilantro</li>
+          </ul>
+          <strong>Instructions:</strong>
+          <ol>
+            <li>Cook noodles according to package instructions.</li>
+            <li>Stir-fry vegetables in sesame oil, add soy sauce and chili flakes.</li>
+            <li>Toss noodles with sauce and vegetables. Garnish with cilantro.</li>
+          </ol>
+        </div>
+        <button class="read-more" onclick="toggleReadMore('post-content-1', this)">Read More</button>
+      </div>
+    </div>
+    <div class="post" id="post-french-toast">
+      <img src="https://images.unsplash.com/photo-1464306076886-debede14b9c6?auto=format&fit=crop&w=700&q=80" alt="Classic French Toast">
+      <div class="post-details">
+        <h2 class="post-title">Classic French Toast</h2>
+        <div class="post-meta">Posted on September 6, 2025 by Adnan</div>
+        <div class="post-content" id="post-content-2">
+          Simple, sweet, and a weekend favorite. This classic French toast recipe is perfect for breakfast or brunch!<br>
+          <strong>Ingredients:</strong>
+          <ul>
+            <li>4 slices of bread</li>
+            <li>2 eggs</li>
+            <li>1/2 cup milk</li>
+            <li>1 tsp cinnamon</li>
+            <li>1 tsp vanilla extract</li>
+            <li>Butter for frying</li>
+          </ul>
+          <strong>Instructions:</strong>
+          <ol>
+            <li>Whisk eggs, milk, cinnamon, and vanilla together.</li>
+            <li>Dip bread slices into mixture and fry in butter until golden.</li>
+            <li>Serve with maple syrup and berries.</li>
+          </ol>
+        </div>
+        <button class="read-more" onclick="toggleReadMore('post-content-2', this)">Read More</button>
+      </div>
+    </div>
+    <div class="post" id="post-avocado-toast">
+      <img src="https://images.unsplash.com/photo-1519864600265-abb224b6f5f6?auto=format&fit=crop&w=700&q=80" alt="Avocado Toast">
+      <div class="post-details">
+        <h2 class="post-title">Avocado Toast with Poached Eggs</h2>
+        <div class="post-meta">Posted on September 1, 2025 by Adnan</div>
+        <div class="post-content" id="post-content-3">
+          Creamy avocado, perfectly poached eggs, and crunchy toast—this is a breakfast that will never go out of style.<br>
+          <strong>Ingredients:</strong>
+          <ul>
+            <li>2 slices sourdough bread</li>
+            <li>1 ripe avocado</li>
+            <li>2 eggs</li>
+            <li>Salt and pepper to taste</li>
+            <li>Chili flakes & microgreens (optional)</li>
+          </ul>
+          <strong>Instructions:</strong>
+          <ol>
+            <li>Toast bread slices until golden.</li>
+            <li>Mash avocado, season with salt and pepper, spread on toast.</li>
+            <li>Poach eggs and place them on avocado toast. Sprinkle with chili flakes and microgreens.</li>
+          </ol>
+        </div>
+        <button class="read-more" onclick="toggleReadMore('post-content-3', this)">Read More</button>
+      </div>
+    </div>
+  </div>
+  <footer>
+    &copy; 2025 Deliciously Yours | Crafted with love by Adnan
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
