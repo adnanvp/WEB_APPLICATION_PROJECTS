@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — LexCore Law Firm</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --teal:        #47A992;
+      --teal-dark:   #3a8f7b;
+      --teal-deeper: #2d7060;
+      --teal-light:  #e8f5f2;
+      --teal-muted:  #c2e0da;
+      --teal-faint:  #f2fbf8;
+      --white:       #ffffff;
+      --gray-50:     #f9fafb;
+      --gray-100:    #f1f5f3;
+      --gray-300:    #d1d5db;
+      --gray-500:    #6b7280;
+      --gray-700:    #374151;
+      --gray-900:    #0f1f1a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--gray-900);
+      overflow-x: hidden;
+    }
+
+    * {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	background: transparent;
+	font-weight: normal;
+	text-decoration: none;
+	outline: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+ol, ul {
+	list-style: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+    /* ─── HERO ─── */
+    .hero {
+      background: var(--teal);
+      position: relative;
+      overflow: hidden;
+      padding: 100px 40px 80px;
+      text-align: center;
+      margin: 0px 60px;
+    }
+
+    .hero::before {
+      content: '';
+      margin: 0px 60px;
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 10% 50%, rgba(255,255,255,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 90% 20%, rgba(0,0,0,0.08) 0%, transparent 60%);
+
+    }
+
+    .hero-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 5px 16px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.1;
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* Decorative circles */
+    .hero-circle {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .hero-circle.c1 { width: 320px; height: 320px; top: -80px; left: -80px; }
+    .hero-circle.c2 { width: 200px; height: 200px; bottom: -60px; right: 60px; }
+    .hero-circle.c3 { width: 100px; height: 100px; top: 30px; right: 200px; }
+
+    /* ─── STATS BAR ─── */
+    .stats-bar {
+      background: var(--gray-900);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+      margin: 0px 60px;
+    }
+
+    .stat-item {
+      flex: 1;
+      min-width: 160px;
+      max-width: 240px;
+      padding: 28px 24px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--teal);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 6px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ─── SECTION COMMONS ─── */
+    section { padding: 80px 40px; margin: 0px 60px; }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+
+    .section-tag::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background: var(--teal);
+      border-radius: 2px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      font-weight: 600;
+      color: var(--gray-900);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 0.95rem;
+      color: var(--gray-500);
+      line-height: 1.8;
+      max-width: 520px;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    /* ─── STORY SECTION ─── */
+    .story { background: var(--white); }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .story-visual {
+      position: relative;
+    }
+
+    .story-img-box {
+      width: 100%;
+      aspect-ratio: 4/5;
+      background: var(--teal-light);
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Illustrated courtroom/law visual using CSS */
+    .story-img-box .law-art {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .law-art svg { width: 70%; height: auto; opacity: 0.85; }
+
+    .story-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--teal);
+      color: var(--white);
+      padding: 20px 24px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(71,169,146,0.35);
+    }
+
+    .story-badge .big { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 700; line-height: 1; }
+    .story-badge .small { font-size: 0.72rem; opacity: 0.85; margin-top: 4px; }
+
+    .story-text { padding-left: 8px; }
+    .story-text p { font-size: 0.95rem; color: var(--gray-700); line-height: 1.85; margin-bottom: 16px; }
+
+    .values-list {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .value-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .value-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    .value-item strong { font-weight: 500; color: var(--gray-900); display: block; font-size: 0.9rem; }
+    .value-item span { font-size: 0.85rem; color: var(--gray-500); line-height: 1.6; }
+
+    /* ─── PRACTICE AREAS ─── */
+    .practice { background: var(--gray-100); }
+
+    .practice-header { text-align: center; margin-bottom: 52px; }
+    .practice-header .section-sub { margin: 0 auto; }
+
+    .practice-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .practice-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 32px 28px;
+      border: 1px solid var(--teal-muted);
+      transition: transform 0.25s, box-shadow 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .practice-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--teal);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+
+    .practice-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(71,169,146,0.12); }
+    .practice-card:hover::before { transform: scaleX(1); }
+
+    .practice-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--teal-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .practice-icon svg { width: 24px; height: 24px; stroke: var(--teal); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+    .practice-card h4 { font-size: 1rem; font-weight: 500; color: var(--gray-900); margin-bottom: 10px; }
+    .practice-card p { font-size: 0.85rem; color: var(--gray-500); line-height: 1.75; }
+
+    /* ─── TEAM ─── */
+    .team { background: var(--white); }
+
+    .team-header { text-align: center; margin-bottom: 52px; }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+
+    .team-card {
+      text-align: center;
+    }
+
+    .team-avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      border: 3px solid var(--teal-muted);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .team-card:hover .team-avatar {
+      border-color: var(--teal);
+      transform: scale(1.05);
+    }
+
+    .team-card h4 { font-size: 0.95rem; font-weight: 500; color: var(--gray-900); margin-bottom: 4px; }
+    .team-card .role { font-size: 0.78rem; color: var(--teal); font-weight: 500; margin-bottom: 8px; }
+    .team-card .bio { font-size: 0.8rem; color: var(--gray-500); line-height: 1.65; }
+
+    /* ─── WHY US ─── */
+    .why { background: var(--teal); position: relative; overflow: hidden; }
+
+    .why::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 80% 50%, rgba(0,0,0,0.08) 0%, transparent 60%);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+    }
+
+    .why-left .section-tag { color: rgba(255,255,255,0.75); }
+    .why-left .section-tag::before { background: rgba(255,255,255,0.6); }
+    .why-left .section-title { color: var(--white); }
+    .why-left .section-sub { color: rgba(255,255,255,0.75); max-width: 100%; }
+
+    .why-features {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .why-feature {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 14px;
+      padding: 20px 22px;
+      transition: background 0.2s;
+    }
+
+    .why-feature:hover { background: rgba(255,255,255,0.16); }
+
+    .why-feature-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.25);
+      line-height: 1;
+      min-width: 32px;
+    }
+
+    .why-feature h5 { font-size: 0.9rem; font-weight: 500; color: var(--white); margin-bottom: 5px; }
+    .why-feature p  { font-size: 0.82rem; color: rgba(255,255,255,0.7); line-height: 1.65; }
+
+    /* ─── CTA ─── */
+    .cta {
+      background: var(--teal-faint);
+      text-align: center;
+      padding: 80px 40px;
+    }
+
+    .cta .section-title { margin-bottom: 14px; }
+    .cta .section-sub { margin: 0 auto 36px; text-align: center; }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--teal);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-radius: 10px;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--teal-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(71,169,146,0.3);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 14px 32px;
+      background: transparent;
+      color: var(--teal);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-radius: 10px;
+      border: 1.5px solid var(--teal);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: var(--teal);
+      color: var(--white);
+    }
+    footer {
+	background-color: #f4f5f7;
+}
+footer section.top {
+	padding: 60px 0 24px;
+	display: flex;
+	justify-content: space-between ;
+  width: 100%;
+}
+footer section.top div.item {
+	width: 23%;
+}
+footer section.top div.item.large {
+	width: 50%;
+}
+footer section.top div.item.large p {
+	font-weight: 500;
+} 
+footer section.top div.item h3 {
+	font-size: 22px;
+	font-weight: 600;
+	margin-bottom: 30px;
+  color: #47A992;
+}
+footer section.top div.item p {
+	font-size: 16px;
+	font-weight: 400;
+	margin-bottom: 24px;
+}
+footer section.top div.item ul {
+
+}
+footer section.top div.item ul li {
+	margin-bottom: 8px;
+}
+footer section.top div.item ul li a {
+	font-size: 16px;
+	font-weight: 500;
+	display: inline-block;
+	color: #42526E;
+}
+footer section.top div.item form {
+	display: flex;
+	justify-content: space-between;
+}
+footer section.top div.item input[type="email"] {
+	width: 100%;
+	margin-right: 24px;
+	padding: 12px 24px;
+	background-color: #fff;
+	border-radius: 4px;
+	border: 1px solid #c1c7d0;
+	font-size: 16px;
+}
+footer section.top div.item input[type="submit"] {
+	display: inline-block;
+	font-size: 16px;
+	padding: 12px 16px;
+	border: 1px solid #47A992;
+	color: #47A992;
+	border-radius: 4px;
+	cursor: pointer;
+}
+footer section.top div.social {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 30px;
+	align-items: center;
+}
+footer section.top div.social p {
+	margin-right: 30px;
+	margin-bottom: 0;
+}
+footer section.top div.social ul {
+	display: flex;
+	align-items: center;
+}
+footer section.top div.social ul li {
+	margin-right: 8px;
+}
+footer section.top div.social ul li:last-child {
+	margin-right: 0;
+}
+footer section.top div.social ul li a {
+	width: 32px;
+	display: block;
+}	
+footer section.top div.social ul li a img {
+	display: block;
+	width: 30px;
+}
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .story-grid, .why-grid { grid-template-columns: 1fr; gap: 40px; }
+      .practice-grid { grid-template-columns: repeat(2, 1fr); }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .story-badge { bottom: 12px; right: 12px; }
+    }
+
+    @media (max-width: 560px) {
+      section { padding: 56px 20px; }
+      .hero { padding: 72px 24px 60px; }
+      .practice-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-bar { flex-direction: column; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+   <!-- <my-header></my-header> -->
+    <header class="header">
+        <div class="wrapper">
+
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Logo" />
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about-us.html" class="nav-link">About</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="index-lawyer.html" class="nav-link">Find Lawyer</a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a href="find_case.html" class="nav-link">Find Cases</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                    
+                   
+                    <li class="nav-item">
+                        <a href="law_login.html" class="a-submit">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="law_signup.html" class="submit">Sign Up</a>
+                    </li>
+                    
+                </ul>
+                <!-- <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div> -->
+            </nav>
+        </div>
+    </header>
+    <!-- < Header > -->
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-circle c1"></div>
+  <div class="hero-circle c2"></div>
+  <div class="hero-circle c3"></div>
+  <div class="hero-label">About Our Firm</div>
+  <h1>Justice Delivered with Precision & Care</h1>
+  <p>LexCore Law Firm has been advocating for clients with integrity, expertise, and an unwavering commitment to justice since 2001.</p>
+</section>
+
+<!-- ══ STATS BAR ══ -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-number">23+</div>
+    <div class="stat-label">Years of Experience</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">4,800+</div>
+    <div class="stat-label">Cases Resolved</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">98%</div>
+    <div class="stat-label">Client Satisfaction</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">12</div>
+    <div class="stat-label">Expert Attorneys</div>
+  </div>
+</div>
+
+<!-- ══ OUR STORY ══ -->
+<section class="story">
+  <div class="container">
+    <div class="story-grid">
+
+      <div class="story-visual">
+        <div class="story-img-box">
+          <div class="law-art">
+            <svg viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Scale of justice illustration -->
+              <rect x="95" y="20" width="10" height="140" rx="4" fill="#47A992" opacity="0.5"/>
+              <!-- Top beam -->
+              <rect x="30" y="34" width="140" height="8" rx="4" fill="#47A992" opacity="0.7"/>
+              <!-- Left pan -->
+              <path d="M50 50 Q40 90 60 90 Q80 90 70 50Z" fill="#47A992" opacity="0.25"/>
+              <line x1="50" y1="50" x2="65" y2="50" stroke="#47A992" stroke-width="2"/>
+              <line x1="65" y1="50" x2="65" y2="90" stroke="#47A992" stroke-width="2"/>
+              <!-- Right pan -->
+              <path d="M130 50 Q120 90 140 90 Q160 90 150 50Z" fill="#3a8f7b" opacity="0.25"/>
+              <line x1="130" y1="50" x2="145" y2="50" stroke="#47A992" stroke-width="2"/>
+              <line x1="145" y1="50" x2="145" y2="90" stroke="#47A992" stroke-width="2"/>
+              <!-- Base -->
+              <rect x="70" y="158" width="60" height="8" rx="4" fill="#47A992" opacity="0.5"/>
+              <rect x="80" y="166" width="40" height="6" rx="3" fill="#47A992" opacity="0.35"/>
+              <!-- Book stack -->
+              <rect x="55" y="110" width="90" height="14" rx="3" fill="#c2e0da"/>
+              <rect x="58" y="100" width="84" height="12" rx="3" fill="#a8d4cc"/>
+              <rect x="62" y="91" width="76" height="11" rx="3" fill="#47A992" opacity="0.45"/>
+              <!-- Stars -->
+              <circle cx="40" cy="170" r="4" fill="#47A992" opacity="0.3"/>
+              <circle cx="160" cy="150" r="3" fill="#47A992" opacity="0.2"/>
+              <circle cx="170" cy="185" r="5" fill="#c2e0da" opacity="0.4"/>
+              <circle cx="30" cy="195" r="3" fill="#47A992" opacity="0.25"/>
+            </svg>
+          </div>
+        </div>
+        <div class="story-badge">
+          <div class="big">2001</div>
+          <div class="small">Founded</div>
+        </div>
+      </div>
+
+      <div class="story-text">
+        <div class="section-tag">Our Story</div>
+        <h2 class="section-title">Two Decades of Fighting for What's Right</h2>
+        <p>LexCore Law Firm was founded in 2001 with a single purpose — to make expert legal representation accessible and compassionate. What began as a two-attorney practice has grown into a full-service firm trusted by thousands of clients across the region.</p>
+        <p>We believe in clear communication, honest counsel, and relentless advocacy. Every case we take on is handled with the same dedication, whether it's a family dispute or a complex criminal matter.</p>
+
+        <div class="values-list">
+          <div class="value-item">
+            <div class="value-dot"></div>
+            <div>
+              <strong>Integrity First</strong>
+              <span>We hold ourselves to the highest ethical standards in every case.</span>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-dot"></div>
+            <div>
+              <strong>Client-Centered Approach</strong>
+              <span>Your goals guide our strategy — we listen before we act.</span>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-dot"></div>
+            <div>
+              <strong>Results Driven</strong>
+              <span>We combine deep legal knowledge with a relentless pursuit of outcomes.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ PRACTICE AREAS ══ -->
+<section class="practice">
+  <div class="container">
+    <div class="practice-header">
+      <div class="section-tag">What We Do</div>
+      <h2 class="section-title">Our Practice Areas</h2>
+      <p class="section-sub">From family law to corporate disputes, our attorneys bring specialized expertise to every legal challenge you face.</p>
+    </div>
+
+    <div class="practice-grid">
+
+      <div class="practice-card">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h4>Family Law</h4>
+        <p>Divorce, custody, alimony, and adoption cases handled with sensitivity and strategic clarity.</p>
+      </div>
+
+      <div class="practice-card">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>Criminal Defence</h4>
+        <p>Aggressive, experienced defence for all criminal charges — from misdemeanours to serious felonies.</p>
+      </div>
+
+      <div class="practice-card">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h4>Corporate Law</h4>
+        <p>Business formation, contracts, mergers, and compliance counsel for companies of all sizes.</p>
+      </div>
+
+      <div class="practice-card">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h4>Real Estate</h4>
+        <p>Property disputes, title issues, conveyancing, and landlord-tenant matters resolved efficiently.</p>
+      </div>
+
+      <div class="practice-card">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h4>Civil Litigation</h4>
+        <p>Representing plaintiffs and defendants in civil disputes with precision and courtroom experience.</p>
+      </div>
+
+      <div class="practice-card">
+        <div class="practice-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <h4>Legal Consultation</h4>
+        <p>Quick, expert consultations for individuals needing clarity before taking any legal step.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ TEAM ══ -->
+<section class="team">
+  <div class="container">
+    <div class="team-header">
+      <div class="section-tag">The People</div>
+      <h2 class="section-title">Meet Our Attorneys</h2>
+      <p class="section-sub" style="margin: 0 auto;">A dedicated team of experienced lawyers committed to delivering the best possible outcomes for our clients.</p>
+    </div>
+
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="team-avatar" style="background:#d1ede8; color:#2a7a68;">MR</div>
+        <h4>Margaret Reynolds</h4>
+        <div class="role">Senior Partner</div>
+        <p class="bio">20+ years in family law and civil litigation. Known for compassionate, decisive advocacy.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar" style="background:#dce8fd; color:#2a4fa0;">JK</div>
+        <h4>James Kurian</h4>
+        <div class="role">Criminal Defence</div>
+        <p class="bio">Former prosecutor with a sharp instinct for defence strategy and courtroom presence.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar" style="background:#ede8fd; color:#5a2da0;">SP</div>
+        <h4>Sophia Patel</h4>
+        <div class="role">Corporate Counsel</div>
+        <p class="bio">Specialist in mergers, contracts, and startup legal frameworks across multiple industries.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar" style="background:#fde8d8; color:#a0522d;">DM</div>
+        <h4>David Menon</h4>
+        <div class="role">Real Estate Law</div>
+        <p class="bio">Handles property disputes and conveyancing with meticulous attention to detail.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY US ══ -->
+<section class="why">
+  <div class="container">
+    <div class="why-grid">
+
+      <div class="why-left">
+        <div class="section-tag">Why Choose Us</div>
+        <h2 class="section-title" style="color:var(--white);">Your Legal Partner for Every Challenge</h2>
+        <p class="section-sub">We don't just handle cases — we build relationships. Our clients trust us because we're honest, skilled, and genuinely invested in their outcomes.</p>
+      </div>
+
+      <div class="why-features">
+        <div class="why-feature">
+          <div class="why-feature-num">01</div>
+          <div>
+            <h5>Transparent Pricing</h5>
+            <p>No hidden fees. We discuss costs clearly upfront so you can plan with confidence.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-num">02</div>
+          <div>
+            <h5>24/7 Client Support</h5>
+            <p>Legal emergencies don't follow office hours. Our team is always reachable when it matters most.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-num">03</div>
+          <div>
+            <h5>Proven Track Record</h5>
+            <p>Over 4,800 cases resolved with a 98% client satisfaction rate across all practice areas.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-num">04</div>
+          <div>
+            <h5>Personalised Strategy</h5>
+            <p>Every case is unique. We tailor our approach specifically to your situation and goals.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="cta">
+  <div class="container">
+    <div class="section-tag" style="justify-content:center;">Get Started</div>
+    <h2 class="section-title" style="text-align:center;">Ready to Talk to an Attorney?</h2>
+    <p class="section-sub" style="text-align:center;">Schedule a free consultation today. We'll listen to your situation and give you an honest assessment of your options.</p>
+    <div class="cta-buttons">
+      <a href="appointment.html" class="btn-primary">Book a Free Consultation</a>
+      <a href="#" class="btn-outline">Learn More</a>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+        <section class="wrapper">
+            <section class="top">
+                <div class="item">
+                    <h3>Jurist</h3>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Legal Reasearch </a></li>
+                        <li><a href="">Find Lawyer</a></li>
+                        <li><a href="">Find a law firm</a></li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">FAQ's</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="item large">
+                    <h3>Connect with us</h3>
+                    <p>Sign up for Git articles and resources:</p>
+                    <form action="">
+                        <input type="email" placeholder="Email Address" />
+                        <input type="submit" value="Subscibe" />
+                    </form>
+                    <div class="social">
+                        <p>Connect with Jurist</p>
+                        <ul>
+                            <li><a href=""><img src="images/facebook-badge.svg" alt=""></a></li>
+                            <li><a href=""><img src="images/twitter.svg" alt=""></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </footer>
+</body>
+</html>
